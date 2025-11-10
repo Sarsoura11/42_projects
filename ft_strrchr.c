@@ -6,7 +6,7 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:38:19 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/05 14:33:25 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/10 16:48:48 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,21 @@ char *ft_strrchr(const char *s, int c)
 	{
 		i++;
 	}
-	while (i != -1)
+	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char) c)
 			return ((char *)&s[i]);
 		i--;
 	}
 	return (NULL);
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	char *str = "Hollo!";
+// 	int c = 'o';
+
+// 	printf("strrchr %s\n", ft_strrchr(str, c + 256));
+// }

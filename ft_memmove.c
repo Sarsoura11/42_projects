@@ -1,19 +1,21 @@
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const unsigned char *s;
-	unsigned char *d;
-	size_t l;
-	
+	const unsigned char	*s;
+	unsigned char		*d;
+	size_t				l;
+
 	s = (const unsigned char *)src;
 	d = (unsigned char *)dst;
-	if ((!dst && !src) || len == 0)
-		return(d);
+	if (!dst && !src)
+		return (NULL);
+	if (d == s || len == 0)
+		return (d);
 	if (d < s)
 	{
 		l = 0;
-		while (l <= len)
+		while (l < len)
 		{
 			d[l] = s[l];
 			l++;
@@ -26,3 +28,30 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// 	{
+// 		char dst[20] = "Hello world";
+// 		char *src = "Hi";
+// 		size_t len = ft_strlen(dst);
+
+// 		// void *new_result= ft_memmove(dst, src, len);
+// 		// printf("Mine %s\n", new_result);
+
+// 		// void *orig_result= memmove(dst,src,len);
+// 		// printf("Original %s\n", orig_result);
+
+// 		// char src[] = "abcdef";
+// 		// ft_memmove(src + 2, src, 8);
+
+// 		// printf("%s\n", src);
+
+// 		ft_memmove(dst, src, len);
+// 		printf("Mine %s\n", dst);
+
+// 		// memmove(dst,src,len);
+// 		// printf("Original %s\n", dst);
+// 		return (0);
+// 	}
