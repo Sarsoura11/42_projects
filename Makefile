@@ -1,5 +1,6 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
+CFLAGS_DEBUG = -g3 -fsanitize=address
 SRC = \
 	ft_isalpha.c\
 	ft_isdigit.c\
@@ -24,7 +25,9 @@ SRC = \
 	ft_memmove.c\
 	ft_memcpy.c\
 	ft_strnstr.c\
-	ft_atoi.c
+	ft_atoi.c\
+	ft_strdup.c\
+	ft_calloc.c
 
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
@@ -38,6 +41,10 @@ $(NAME): $(OBJS)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
+# Debug build: rebuild OBJS with debug flags
+debug: CFLAGS =+ $(CFLAGS_DEBUG)
+debug: clean $(NAME)
+
 clean:
 	rm -rf $(OBJS)
 
@@ -46,4 +53,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re debug
