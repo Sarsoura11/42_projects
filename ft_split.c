@@ -1,43 +1,82 @@
 #include "libft.h"
 
-static int count_word(char const *s, char c)
+static size_t count_word(char const *s, char c)
 {
-	 int i;
-	 int count;
+	 size_t i;
+	 size_t count;
 
 	 i = 0;
 	 count = 0;
-	 while (s[i] != '\0')
-	 {
-		if (s[i] && s[i] == c)
-			i++;
-		if (s[i] && s[i] != c)
-			count++;
-	 }
+	while (s[i])
+	{
+        while (s[i] && s[i] == c)
+            i++;
+
+        if (s[i])
+        {
+            count++;
+            while (s[i] && s[i] != c)
+                i++;
+        }
+	}
 	 return (count);
 }
 
-static char alloc_word(char const *s, char c)
+static int alloc_word(char const *s, char c, char **result)
 {
-	int i;
-
-	if (!(split = *malloc(count_word + 1) * sizeof(char )))
-	return (NULL);
+	size_t  i;
+    size_t  word_start;
+    size_t  word_idx;
+	size_t word_len;
 	i = 0;
+	word_idx = 0;
+	while (s[i])
+    {
+		while (s[i] && s[i] == c)
+            i++;
+
+        if (s[i])
+        {
+            word_start = i;
+            while (s[i] && s[i] != c)
+                i++;
+            word_len = i - word_start;
+
+            result[word_idx] = ft_substr(s, word_start, word_len);
+			    if (!result[word_idx])
+            	{
+					free_all(result, word_idx);
+                	return -1;
+            	}
+        		word_idx++;
+		}
+	}
+	result[i]= NULL;	
+	return (0);
+}
+
+static void free_all(char **arr, size_t i)
+{
+	while (i > 0)
+		free(arr[i--]);
+	free(arr);
 }
 
 char **ft_split(char const *s, char c)
 {
-	int i;
-	char **split;
-	int split_len;
+	char    **result;
+    size_t  word_count;
+    size_t  i;
 
-	if(!s || !c)
+	if(!s)
 		return (NULL);
-	i = 0;
+	
+	word_count = count_word(s, c);
 
-	if (!(*split = malloc(c + 2) * sizeof(char )))
+	if (!(result = malloc(sizeof(char *) * (word_count + 1))))
 		return (NULL);
-
+	
+	if (alloc_word(s, c, result) == -1)
+		return (NULL);
+	return(result);
 }
-static void free_split()
