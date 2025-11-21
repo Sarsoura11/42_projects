@@ -29,18 +29,18 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return (combined);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main(void)
-// {
-// 	char *s1 = "Hello ";
-// 	char *s2 = "World!";
-// 	char *my_result;
+int main(void)
+{
+	char *s1 = "Hello ";
+	char *s2 = "World!";
+	char *my_result;
 
-// 	my_result = ft_strjoin(s1, s2);
+	my_result = ft_strjoin(s1, s2);
 
-// 	printf("Combined: %s\n", my_result);
+	printf("Combined: %s\n", my_result);
 
-// 	free(my_result);
-// 	return (0);
-// }
+	free(my_result);
+	return (0);
+}

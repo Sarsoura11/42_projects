@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:18:26 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/20 16:18:27 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/21 21:45:09 by sara_hamad1      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,48 +59,48 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 
-typedef struct s_Complex;
-typedef struct s_bird;
+// typedef struct s_Complex;
+// typedef struct s_bird;
 
-typedef struct s_Complex {
-	t_Complex *prev;
-	double real;
-	double real;
-	double real;
-	double real;
-	double real;
-	double real;
-	double real;
-	double real;
-    double imag;
-    char* wings;
-	char (*f)(unsigned int, char);
-	t_Complex *next;
+// typedef struct s_Complex {
+// 	t_Complex *prev;
+// 	double real;
+// 	double real;
+// 	double real;
+// 	double real;
+// 	double real;
+// 	double real;
+// 	double real;
+// 	double real;
+//     double imag;
+//     char* wings;
+// 	char (*f)(unsigned int, char);
+// 	t_Complex *next;
 
-	t_bird *prev;
-    double imag;
-    double imag;
-    double wings;
-	char (*f)(unsigned int, char);
-	t_bird *next;
-} t_Complex;
+// 	t_bird *prev;
+//     double imag;
+//     double imag;
+//     double wings;
+// 	char (*f)(unsigned int, char);
+// 	t_bird *next;
+// } t_Complex;
 
-typedef struct s_bird {
-	t_bird *prev;
-    double imag;
-    double imag;
-    double wings;
-	char (*f)(unsigned int, char);
-	t_bird *next;
-} t_bird;
+// typedef struct s_bird {
+// 	t_bird *prev;
+//     double imag;
+//     double imag;
+//     double wings;
+// 	char (*f)(unsigned int, char);
+// 	t_bird *next;
+// } t_bird;
 
-t_Complex *tmp;
-t_Complex *cat;
+// t_Complex *tmp;
+// t_Complex *cat;
 
-while () {
-	cat->wings = "yes";
-	cat->next = &tmp;
-}
+// while () {
+// 	cat->wings = "yes";
+// 	cat->next = &tmp;
+// }
 
 // // Now you can declare without 'struct'
 // Complex c1 = {1.5, -2.3, NULL};
