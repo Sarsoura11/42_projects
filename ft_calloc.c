@@ -1,20 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 18:56:43 by sahamad           #+#    #+#             */
+/*   Updated: 2025/11/24 18:58:34 by sahamad          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-// SIZE_MAX = 18446744073709551615UL
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void *memspace;
-	size_t total;
+	void	*memspace;
+	size_t	total;
+
 	if (count == 0 || size == 0)
 		return (malloc(0));
 	if (count > 0 && size > SIZE_MAX / count)
-			return (NULL);
-	// if (count > SIZE_MAX / size)
-	// 	return (NULL);
-
+		return (NULL);
 	total = count * size;
 	memspace = malloc(total);
-	if(!memspace)
+	if (!memspace)
 		return (NULL);
 	ft_memset(memspace, 0, total);
 	return (memspace);
@@ -34,14 +43,13 @@ void *ft_calloc(size_t count, size_t size)
 // 	i = 0;
 // 	while(i < ((count * size)/sizeof(int)))
 // 	{
-// 		printf("%d", array[i]); 
+// 		printf("%d", array[i]);
 // 		i++;
 // 	}
 
 // 	printf("}\n(%zu)", i);
 // 	return (0);
 // }
-
 
 // #include <stdio.h>
 // #include <stdlib.h>
@@ -52,7 +60,7 @@ void *ft_calloc(size_t count, size_t size)
 
 //     if (arr == NULL) {
 //         printf("Memory allocation failed!\n");
-//         return 1;
+//         return (1);
 //     }
 
 //     // initialize and print the array
@@ -62,6 +70,9 @@ void *ft_calloc(size_t count, size_t size)
 //     }
 
 //     free(arr); // free allocated memory
-//     return 0;
+//     return (0);
 // }
 
+// SIZE_MAX = 18446744073709551615UL
+// if (count > SIZE_MAX / size)
+// 	return (NULL);
