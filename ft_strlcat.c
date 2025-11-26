@@ -1,7 +1,18 @@
-// #include "libft.h"
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 18:56:00 by sara_hamad1       #+#    #+#             */
+/*   Updated: 2025/11/25 18:56:23 by sara_hamad1      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	d;
 	size_t	s;
@@ -27,16 +38,15 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 // #include <stdio.h>
 
 // int main (int ac, char **av) {
-
 // 	if (ac != 2) {
 // 		printf("not enough arguments\n");
 // 		return (1);
 // 	}
 
 // 	// Use a character array instead of string literal
-// 	char dst[50] = "Hello ";  // Array with enough space, initialized with "Hello "
+// 	char dst[50] = "Hello ";
 // 	char *src = av[1];
-	
+
 // 	// Fix: sizeof(dst) is correct here since dst is now an array
 // 	// But you might want to use the actual size you allocated
 // 	int size = sizeof(dst);

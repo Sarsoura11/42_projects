@@ -1,29 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 19:00:14 by sara_hamad1       #+#    #+#             */
+/*   Updated: 2025/11/25 19:00:16 by sara_hamad1      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t start;
-	size_t end;
-	size_t len;
-	char *trimmed;
+	size_t	start;
+	size_t	end;
+	size_t	len;
+	char	*trimmed;
 
 	if (!s1 || !set)
-	return (NULL);
-
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
-
-	while(s1[start] && ft_strchr(set, s1[start]) != NULL)
+	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
 		start++;
-
-	while(end > start && ft_strchr(set, s1[end - 1]) != NULL)
+	while (end > start && ft_strchr(set, s1[end - 1]) != NULL)
 		end--;
-
 	len = end - start;
-
-	if (!(trimmed = malloc(len + 1)))
+	trimmed = malloc(len + 1);
+	if (!trimmed)
 		return (NULL);
-
 	ft_memcpy(trimmed, s1 + start, len);
 	trimmed[len] = '\0';
 	return (trimmed);
@@ -78,6 +85,3 @@ char *ft_strtrim(const char *s1, const char *set)
 // 	}
 // 	return(trim[start]);
 // }
-
-
-// triming from back and front to remove everything until *set is reached from both ends.

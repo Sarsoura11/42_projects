@@ -1,14 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 20:03:57 by sara_hamad1       #+#    #+#             */
+/*   Updated: 2025/11/25 20:04:46 by sara_hamad1      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int len;
+	int	len;
 
 	len = 0;
-
-	if(!lst)
+	if (!lst)
 		return (0);
-
 	while (lst != NULL)
 	{
 		len++;
@@ -19,7 +29,7 @@ int ft_lstsize(t_list *lst)
 
 // lst: beginning of the list.
 
-#include <stdio.h>
+// #include <stdio.h>
 // int main(void)
 // {
 // 	char *str = "Hello";

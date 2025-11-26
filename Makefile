@@ -31,13 +31,16 @@ SRC = \
 	ft_substr.c\
 	ft_strjoin.c\
 	ft_strtrim.c\
+	ft_split.c\
+	ft_itoa.c\
 	ft_putchar_fd.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
 	ft_strmapi.c\
 	ft_striteri.c\
-	ft_lstnew.c\
+
+BONUS = ft_lstnew.c\
 	ft_lstadd_front.c\
 	ft_lstsize.c\
 	ft_lstlast.c\
@@ -48,27 +51,31 @@ SRC = \
 	ft_lstmap.c\
 
 OBJS = $(SRC:.c=.o)
+BONUS_OBJS = $(BONUS:.c=.o)
 NAME = libft.a
 AR = ar rcs
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(SRC) $(OBJS) -o $(NAME)
+# $(NAME): $(OBJS) $(BONUS_OBJS)
+# 	$(CC) $(CFLAGS) $(SRC) $(OBJS) $(BONUS_OBJS) -o test
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
+
+bonus: $(OBJS) $(BONUS_OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS)
 
 # Debug build: rebuild OBJS with debug flags
 debug: CFLAGS =+ $(CFLAGS_DEBUG)
 debug: clean $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re debug
+.PHONY: all bonus clean fclean re debug

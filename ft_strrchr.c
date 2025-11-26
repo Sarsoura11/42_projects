@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:38:19 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/10 16:48:48 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/25 19:44:47 by sara_hamad1      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != 0)

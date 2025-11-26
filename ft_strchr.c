@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:37:59 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/04 16:42:58 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/26 11:53:48 by sara_hamad1      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	len;
-
-	len = 0;
 	while (*s)
 	{
 		if (*s == (char)c)
