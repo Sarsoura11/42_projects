@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:59:07 by sara_hamad1       #+#    #+#             */
-/*   Updated: 2025/11/25 19:59:43 by sara_hamad1      ###   ########.fr       */
+/*   Updated: 2025/11/26 20:05:59 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static	size_t	count_word(char const *s, char c)
 			i++;
 		if (s[i])
 		{
-			count++;
 			while (s[i] && s[i] != c)
 				i++;
+			count++;
 		}
 	}
 	return (count);
@@ -35,41 +35,42 @@ static	size_t	count_word(char const *s, char c)
 
 static void	free_all(char **arr, size_t i)
 {
-	while (i > 0)
-		free(arr[i--]);
+	while (i--)
+		free(arr[i]);
 	free(arr);
 }
 
-static int	alloc_word(char const *s, char c, char **result)
+static char *alloc_word(char const *s, char c)
 {
-	size_t	i;
-	size_t	word_start;
-	size_t	word_idx;
-	size_t	word_len;
-
+	size_t i;
 	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return ft_substr(s, 0, i);
+
+}
+
+static int	alloc_words(char const *s, char c, size_t word_count, char **result)
+{
+	size_t	word_idx;
+
 	word_idx = 0;
-	while (s[i])
+	while (word_idx < word_count)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
+		while (*s && *s == c)
+			s++;
+		result[word_idx] = alloc_word(s, c);
+		if (!result[word_idx])
 		{
-			word_start = i;
-			while (s[i] && s[i] != c)
-				i++;
-			word_len = i - word_start;
-			result[word_idx] = ft_substr(s, word_start, word_len);
-			if (!result[word_idx])
-			{
-				free_all(result, word_idx);
-				return (-1);
-			}
-			word_idx++;
+			free_all(result, word_idx);
+			return (0);
 		}
+		while (*s && *s != c)
+			s++;
+		word_idx++;
 	}
-	result [i] = NULL;
-	return (0);
+	result[word_idx] = NULL;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -83,7 +84,17 @@ char	**ft_split(char const *s, char c)
 	result = malloc(sizeof(char *) * (word_count + 1));
 	if (!result)
 		return (NULL);
-	if (alloc_word(s, c, result) == -1)
-		return (NULL);
-	return (result);
+	if (alloc_words(s, c, word_count, result))
+		return result;
+	return (NULL);
 }
+
+// int main(void)
+// {
+// 	char **words = ft_split("Hello Sara ", ' ');
+// 	for (int i = 0; words[i]; i++)
+// 	{
+// 		printf("%s\n", words[i]);
+// 	}
+// 	return 0;
+// }
