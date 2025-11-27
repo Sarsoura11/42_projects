@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:49:54 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/25 18:51:22 by sara_hamad1      ###   ########.fr       */
+/*   Updated: 2025/11/27 13:48:57 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
-	create_num(i, str + i, sign, &result);
+	create_num(i, str, sign, &result);
 	if (result == LLONG_MAX && sign == 1)
 		return (INT_MAX);
 	if (result == LLONG_MIN && sign == -1)
@@ -89,8 +89,14 @@ int	ft_atoi(const char *str)
 // #include <stdlib.h>
 // int main(void)
 // {
-// 	printf("ft_atoi : %d\n", ft_atoi("-4886"));
-// 	printf("ft_atoi : %d\n", ft_atoi("-9223372036854775808"));
-// 	printf("atoi : %d\n", atoi("-4886"));
-// 	printf("atoi : %d\n", atoi("-9223372036854775808"));
+// 	printf("ft_atoi : %d\n", ft_atoi(""));
+// 	printf("atoi : %d\n", atoi(""));
+// 	printf("ft_atoi : %d\n", ft_atoi("-2147483648"));
+// 	printf("atoi : %d\n", atoi("-2147483648"));
+// 	printf("ft_atoi : %d\n", ft_atoi("+5885959"));
+// 	printf("atoi : %d\n", atoi("+5885959"));
+// 	printf("ft_atoi : %d\n", ft_atoi("+588 59  59 "));
+// 	printf("atoi : %d\n", atoi("+588 5959 "));
+
+
 // }
