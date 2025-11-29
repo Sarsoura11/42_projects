@@ -6,7 +6,7 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:59:07 by sara_hamad1       #+#    #+#             */
-/*   Updated: 2025/11/29 16:22:44 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/29 16:50:20 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,20 +86,17 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	if (alloc_words(s, c, word_count, result))
-	{
-		free(result);
 		return (result);
-	}
 	return (NULL);
 }
 
-int main(void)
-{
-	char **words = ft_split("Hello Sara ", ' ');
-	for (int i = 0; words[i]; i++)
-	{
-		printf("%s\n", words[i]);
-		free(words[i]);
-	}
-	return 0;
-}
+// int main(void)
+// {
+// 	char **words = ft_split("Hello Sara ", ' ');
+// 	for (int i = 0; words[i]; i++)
+// 	{
+// 		printf("%s\n", words[i]);
+// 		free(words[i]);
+// 	}
+// 	return 0;
+// }
