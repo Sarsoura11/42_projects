@@ -6,11 +6,12 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:59:07 by sara_hamad1       #+#    #+#             */
-/*   Updated: 2025/11/26 20:05:59 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/29 16:22:44 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static	size_t	count_word(char const *s, char c)
 {
@@ -40,14 +41,14 @@ static void	free_all(char **arr, size_t i)
 	free(arr);
 }
 
-static char *alloc_word(char const *s, char c)
+static char	*alloc_word(char const *s, char c)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
 	while (s[i] && s[i] != c)
 		i++;
-	return ft_substr(s, 0, i);
-
+	return (ft_substr(s, 0, i));
 }
 
 static int	alloc_words(char const *s, char c, size_t word_count, char **result)
@@ -85,16 +86,20 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	if (alloc_words(s, c, word_count, result))
-		return result;
+	{
+		free(result);
+		return (result);
+	}
 	return (NULL);
 }
 
-// int main(void)
-// {
-// 	char **words = ft_split("Hello Sara ", ' ');
-// 	for (int i = 0; words[i]; i++)
-// 	{
-// 		printf("%s\n", words[i]);
-// 	}
-// 	return 0;
-// }
+int main(void)
+{
+	char **words = ft_split("Hello Sara ", ' ');
+	for (int i = 0; words[i]; i++)
+	{
+		printf("%s\n", words[i]);
+		free(words[i]);
+	}
+	return 0;
+}

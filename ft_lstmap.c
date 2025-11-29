@@ -6,13 +6,13 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:13:46 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/27 14:15:23 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/11/28 10:37:56 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
+// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// {
 	
-}
+// }

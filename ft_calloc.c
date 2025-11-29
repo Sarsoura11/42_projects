@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:56:43 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/25 18:35:48 by sara_hamad1      ###   ########.fr       */
+/*   Updated: 2025/11/29 16:03:26 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 		memspace = malloc(0);
 		return (memspace);
 	}
-	if (count > SIZE_MAX / size)
+	if (count > (size_t)-1 / size)
 		return (NULL);
 	total = count * size;
 	memspace = malloc(total);
@@ -50,7 +50,9 @@ void	*ft_calloc(size_t count, size_t size)
 // 		i++;
 // 	}
 
-// 	printf("}\n(%zu)", i);
+// 	free(array);
+
+// 	printf("\n(%zu)", i);
 // 	return (0);
 // }
 
