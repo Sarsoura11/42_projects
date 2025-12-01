@@ -6,7 +6,7 @@
 /*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 18:31:27 by sara_hamad1       #+#    #+#             */
-/*   Updated: 2025/11/25 18:31:29 by sara_hamad1      ###   ########.fr       */
+/*   Updated: 2025/12/01 22:00:43 by sara_hamad1      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,32 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
+
 	if (!lst || !new)
 		return ;
-	while (*lst)
+	if (!*lst)
 	{
-		lst = &(*lst)->next;
+		*lst = new;
+		return ;
 	}
-	new->next = NULL;
-	*lst = new;
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
+
+// void	ft_lstadd_back(t_list **lst, t_list *new)
+// {
+// 	if (!lst || !new)
+// 		return ;
+// 	while (*lst)
+// 	{
+// 		lst = &(*lst)->next;
+// 	}
+// 	new->next = NULL;
+// 	*lst = new;
+// }
 
 // address of a pointer to the first node of a list.
 // address of a pointer to the node to be addes.
