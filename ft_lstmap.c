@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:13:46 by sahamad           #+#    #+#             */
-/*   Updated: 2025/12/02 15:09:05 by sahamad          ###   ########.fr       */
+/*   Created: 2025/12/02 16:31:17 by sahamad           #+#    #+#             */
+/*   Updated: 2025/12/02 16:31:47 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-
-// void *change_str(void *str)
-// {
-// 	char *string;
-// 	int i;
-
-// 	string = (char *)str;
-// 	i = 0;
-// 	while(string[i])
-// 	{
-// 		if (string[i] == ' ')
-// 			string[i] = '-';
-// 		i++;
-// 	}
-// }
-
-// void *del(void *node)
-// {
-// 	if(node)
-// 		free(node);
-// }

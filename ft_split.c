@@ -6,7 +6,7 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:59:07 by sara_hamad1       #+#    #+#             */
-/*   Updated: 2025/11/29 16:50:20 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/12/02 17:25:42 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ char	**ft_split(char const *s, char c)
 // 		printf("%s\n", words[i]);
 // 		free(words[i]);
 // 	}
+// 	free (words);
 // 	return 0;
 // }
