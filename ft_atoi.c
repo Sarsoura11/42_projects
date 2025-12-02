@@ -6,7 +6,7 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:49:54 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/27 13:48:57 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/12/02 15:08:40 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,4 @@ int	ft_atoi(const char *str)
 // 	printf("atoi : %d\n", atoi("+5885959"));
 // 	printf("ft_atoi : %d\n", ft_atoi("+588 59  59 "));
 // 	printf("atoi : %d\n", atoi("+588 5959 "));
-
-
 // }

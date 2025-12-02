@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara_hamad11 <sara_hamad11@student.42.f    +#+  +:+       +#+        */
+/*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 18:31:27 by sara_hamad1       #+#    #+#             */
-/*   Updated: 2025/11/25 18:31:29 by sara_hamad1      ###   ########.fr       */
+/*   Updated: 2025/12/02 12:05:52 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
+
 	if (!lst || !new)
 		return ;
-	while (*lst)
+	if (!*lst)
 	{
-		lst = &(*lst)->next;
+		*lst = new;
+		return ;
 	}
-	new->next = NULL;
-	*lst = new;
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
 
 // address of a pointer to the first node of a list.

@@ -48,7 +48,7 @@ BONUS = ft_lstnew.c\
 	ft_lstdelone.c\
 	ft_lstclear.c\
 	ft_lstiter.c\
-	# ft_lstmap.c\
+	ft_lstmap.c\
 
 OBJS = $(SRC:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
@@ -63,7 +63,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	$(AR) $(NAME) $(BONUS_OBJS)
 
 # Debug build: rebuild OBJS with debug flags

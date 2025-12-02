@@ -6,7 +6,7 @@
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:18:26 by sahamad           #+#    #+#             */
-/*   Updated: 2025/11/29 15:58:00 by sahamad          ###   ########.fr       */
+/*   Updated: 2025/12/02 15:18:35 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,52 +75,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-// typedef struct s_Complex;
-// typedef struct s_bird;
-
-// typedef struct s_Complex {
-// 	t_Complex *prev;
-// 	double real;
-// 	double real;
-// 	double real;
-// 	double real;
-// 	double real;
-// 	double real;
-// 	double real;
-// 	double real;
-//     double imag;
-//     char* wings;
-// 	char (*f)(unsigned int, char);
-// 	t_Complex *next;
-
-// 	t_bird *prev;
-//     double imag;
-//     double imag;
-//     double wings;
-// 	char (*f)(unsigned int, char);
-// 	t_bird *next;
-// } t_Complex;
-
-// typedef struct s_bird {
-// 	t_bird *prev;
-//     double imag;
-//     double imag;
-//     double wings;
-// 	char (*f)(unsigned int, char);
-// 	t_bird *next;
-// } t_bird;
-
-// t_Complex *tmp;
-// t_Complex *cat;
-
-// while () {
-// 	cat->wings = "yes";
-// 	cat->next = &tmp;
-// }
-
-// // Now you can declare without 'struct'
-// Complex c1 = {1.5, -2.3, NULL};
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
