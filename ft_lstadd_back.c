@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sahamad <sahamad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 18:17:29 by sahamad           #+#    #+#             */
-/*   Updated: 2025/12/02 18:17:31 by sahamad          ###   ########.fr       */
+/*   Created: 2025/12/02 16:29:46 by sahamad           #+#    #+#             */
+/*   Updated: 2025/12/02 18:24:24 by sahamad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,28 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	while (*lst)
+	if (!*lst)
 	{
-		lst = &(*lst)->next;
+		*lst = new;
+		return ;
 	}
-	new->next = NULL;
-	*lst = new;
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
+
+// void	ft_lstadd_back(t_list **lst, t_list *new)
+// {
+// 	if (!lst || !new)
+// 		return ;
+// 	while (*lst)
+// 	{
+// 		lst = &(*lst)->next;
+// 	}
+// 	new->next = NULL;
+// 	*lst = new;
+// }
 
 // address of a pointer to the first node of a list.
 // address of a pointer to the node to be addes.
